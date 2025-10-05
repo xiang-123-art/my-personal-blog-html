@@ -12,13 +12,23 @@
     <p>Here I share my experiences and thoughts on technical learning, life insights and reflections.</p>
   </header>
   <nav>
-    <a href="index.html">🏠Homepage</a> |
-    <a href="articles.html">📝Article List</a> |
-    <a href="about.html">👤 About me</a>
-  </nav>
+    </nav>
   <main>
-    <p>Hello! This is a simple personal blog system. Click on "Article List" at the top to view my articles.</p>
+    <p>Hello！This is a simple personal blog system. Click on "Article List" at the top to view my articles.</p>
   </main>
   <script src="js/data.js"></script>
+  <script src="js/config.js"></script>
+  <footer>
+    </footer>
+  <script>
+    const nav = document.querySelector('nav');
+    if (nav && SITE_CONFIG && SITE_CONFIG.navLinks) {
+      nav.innerHTML = SITE_CONFIG.navLinks.map(link => `<a href="${link.url}">${link.name}</a>`).join(' | ');
+    }
+    const footer = document.querySelector('footer');
+    if (footer && SITE_CONFIG && SITE_CONFIG.footerText) {
+      footer.textContent = SITE_CONFIG.footerText;
+    }
+  </script>
 </body>
 </html>

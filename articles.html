@@ -10,9 +10,6 @@
     <h1>📝 List of articles</h1>
   </header>
   <nav>
-    <a href="index.html">🏠 Home page</a> |
-    <a href="articles.html">📝Article List</a> |
-    <a href="about.html">👤 About me</a>
   </nav>
   <main>
     <h2>All the articles</h2>
@@ -20,6 +17,7 @@
       <!-- JavaScript will dynamically insert the article list. -->
     </ul>
   </main>
+  <script src="js/config.js"></script>
   <script src="js/data.js"></script>
   <script>
     const list = document.getElementById('article-list');
@@ -39,5 +37,17 @@
       list.appendChild(li);
     });
   </script>
+  <script>
+    const nav = document.querySelector('nav');
+    if (nav && SITE_CONFIG && SITE_CONFIG.navLinks) {
+      nav.innerHTML = SITE_CONFIG.navLinks.map(link => `<a href="${link.url}">${link.name}</a>`).join(' | ');
+    }
+    const footer = document.querySelector('footer');
+    if (footer && SITE_CONFIG && SITE_CONFIG.footerText) {
+      footer.textContent = SITE_CONFIG.footerText;
+    }
+  </script>
+  <footer>
+  </footer>
 </body>
 </html>
