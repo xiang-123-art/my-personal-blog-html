@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Article List - My Blog</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>📝 List of articles</h1>
+  </header>
+  <nav>
+    <a href="index.html">🏠 Home page</a> |
+    <a href="articles.html">📝Article List</a> |
+    <a href="about.html">👤 About me</a>
+  </nav>
+  <main>
+    <h2>All the articles</h2>
+    <ul id="article-list">
+      <!-- JavaScript will dynamically insert the article list. -->
+    </ul>
+  </main>
+  <script src="js/data.js"></script>
+  <script>
+    const list = document.getElementById('article-list');
+    articles.forEach(article => {
+      const li = document.createElement('li');
+      const a = document.createElement('a');
+      a.href = `article-detail.html?id=${article.id}`;
+      a.textContent = article.title;
+      li.appendChild(a);
+
+      const summary = document.createElement('p');
+      summary.textContent = article.summary;
+      summary.style.marginLeft = '20px';
+      summary.style.fontStyle = 'italic';
+      li.appendChild(summary);
+
+      list.appendChild(li);
+    });
+  </script>
+</body>
+</html>

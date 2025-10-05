@@ -1,0 +1,115 @@
+/* css/style.css */
+
+/* 全局样式 */
+body {
+  font-family: 'Arial', sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background-color: #f4f4f9;
+  color: #333;
+}
+
+/* 页面容器 */
+header {
+  background: #007BFF;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2em;
+}
+
+/* 导航栏 */
+nav {
+  background: #0056b3;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* 主内容区 */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 20px auto;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* 文章列表样式 */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #f9f9f9;
+  border-left: 4px solid #007BFF;
+  border-radius: 4px;
+}
+
+li a {
+  font-size: 1.1em;
+  font-weight: bold;
+  color: #007BFF;
+  text-decoration: none;
+}
+
+li p {
+  margin: 5px 0 0 0;
+  font-style: italic;
+  color: #555;
+}
+
+/* 关于我卡片样式 */
+.about-card {
+  text-align: center;
+  padding: 20px;
+}
+
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 3px solid #007BFF;
+}
+
+.about-card h2 {
+  color: #007BFF;
+}
+
+.about-card p {
+  font-size: 1.1em;
+  margin: 10px 0;
+  text-align: left;
+}
+
+/* 页脚（可选） */
+footer {
+  text-align: center;
+  padding: 20px;
+  margin-top: 40px;
+  background: #f1f1f1;
+  color: #666;
+  font-size: 0.9em;
+}

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Article Details</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>📄 Article Details</h1>
+  </header>
+  <nav>
+    <a href="index.html">🏠 Home page</a> |
+    <a href="articles.html">📝 Article Details</a>
+  </nav>
+  <main>
+    <div id="article-content">
+      <!-- JavaScript will dynamically load the article content. -->
+    </div>
+  </main>
+  <script src="js/data.js"></script>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = parseInt(urlParams.get('id'));
+
+    const article = articles.find(a => a.id === id);
+
+    if (article) {
+      document.getElementById('article-content').innerHTML = `
+        <h2>${article.title}</h2>
+        <p><em>Release Date：${article.date}</em></p>
+        <p>${article.content}</p>
+      `;
+    } else {
+      document.getElementById('article-content').innerHTML = '<p>❌Article not found</p>';
+    }
+  </script>
+</body>
+</html>
