@@ -9,45 +9,64 @@
   <header>
     <h1>📝 Article List</h1>
   </header>
+
   <nav>
+    
   </nav>
+
   <main>
     <h2>All the articles</h2>
     <ul id="article-list">
-      <!-- JavaScript will dynamically insert the article list. -->
+     
     </ul>
   </main>
+
+  <footer>
+    
+  </footer>
+
+  
   <script src="js/config.js"></script>
   <script src="js/data.js"></script>
+
+  
   <script>
+  
     const list = document.getElementById('article-list');
-    articles.forEach(article => {
-      const li = document.createElement('li');
-      const a = document.createElement('a');
-      a.href = `article-detail.html?id=${article.id}`;
-      a.textContent = article.title;
-      li.appendChild(a);
+    if (list && articles) {
+      articles.forEach(article => {
+        const li = document.createElement('li');
 
-      const summary = document.createElement('p');
-      summary.textContent = article.summary;
-      summary.style.marginLeft = '20px';
-      summary.style.fontStyle = 'italic';
-      li.appendChild(summary);
 
-      list.appendChild(li);
-    });
-  </script>
-  <script>
+        const a = document.createElement('a');
+        a.href = `article-detail.html?id=${article.id}`;
+        a.textContent = article.title;
+        li.appendChild(a);
+
+        
+        const summary = document.createElement('p');
+        summary.textContent = article.summary;
+        summary.style.marginLeft = '20px';
+        summary.style.fontStyle = 'italic';
+        li.appendChild(summary);
+
+        list.appendChild(li);
+      });
+    }
+
+  
     const nav = document.querySelector('nav');
     if (nav && SITE_CONFIG && SITE_CONFIG.navLinks) {
-      nav.innerHTML = SITE_CONFIG.navLinks.map(link => `<a href="${link.url}">${link.name}</a>`).join(' | ');
+      nav.innerHTML = SITE_CONFIG.navLinks
+        .map(link => `<a href="${link.url}">${link.name}</a>`)
+        .join(' | ');
     }
+
+
     const footer = document.querySelector('footer');
     if (footer && SITE_CONFIG && SITE_CONFIG.footerText) {
       footer.textContent = SITE_CONFIG.footerText;
     }
   </script>
-  <footer>
-  </footer>
 </body>
 </html>
