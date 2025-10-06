@@ -6,6 +6,5 @@ const SITE_CONFIG = {
     { name: "👤 About Me", url: "about.html" }
   ],
   
-
    footerText: "© 2025 My Personal Blog. All rights reserved."
 }; 
